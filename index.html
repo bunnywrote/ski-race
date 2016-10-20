@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Ski Rennen</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body ng-app="skiApp">
+        <div ng-controller="skiController" class="container">
+            <div>
+                <h1>Ski Fahren</h1>   
+            </div>
+
+            <div class="ski-container">
+                <div id="athlete-id" class="athlete-icon"></div>
+                <div id="ski-track">
+                    <div ng-repeat="interval in intervals" class="track-part">
+                        <div ng-click="showInfo($index+1)" class="check-point">
+                            <span>{{$index+1}}</span>
+                        </div>
+                        <div ng-class="{current: $index+1 == showed}" class="info-block">
+                            <span>{{$index+1}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <button ng-click="moveForward()">FORWARD>></button>
+
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <script src="scripts.js"></script>
+    </body>
+</html>
