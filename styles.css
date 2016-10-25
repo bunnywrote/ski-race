@@ -23,9 +23,7 @@ h1{
 
 #ski-track{
     display: flex;
-    background: lightblue;
     border-left: 4px #e10019 solid;
-    border-right: 4px black dashed;
     max-width: 90%;
     height: 100%;
     margin: 0 auto;
@@ -44,7 +42,7 @@ h1{
     transition: left 2s ease-in;
 }
 
-.info-block{
+.info-block-left{
     width: 100px;
     height: 35px;
     position: absolute;
@@ -56,10 +54,34 @@ h1{
     display: none
 }
 
-.info-block:before{
+.info-block-left:before{
     content: '';
     top: -13px;
     left: 10px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 12px solid black;
+}
+
+.info-block-right{
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: .2em;
+    bottom: -50px;
+    right: -10px;
+    transition: right 2s ease-in, visibility 1s linear;
+    display: none
+}
+
+.info-block-right:before{
+    content: '';
+    top: -13px;
+    right: 0;
     position: absolute;
     width: 0;
     height: 0;
@@ -94,6 +116,11 @@ h1{
     background-repeat: no-repeat;
 }
 
+.finish{
+    background: url(bw-min.png);
+    width: 23px;
+}
+
 .check-point span{
     left: -20px;
     position: relative;
@@ -106,5 +133,10 @@ h1{
 
     .track-part{
         height: 30px;
+    }
+
+    .finish{
+        background: url(bw-10.png);
+        width: 10px;
     }
 }

@@ -2,10 +2,14 @@ var app = angular.module("skiApp", []);
 
 app.controller("skiController", function($scope) {
     $scope.intervals = [1,2,3,4,5];
-    $scope.checked = [1,2];
-    $scope.current = 2;
-    $scope.showed = 2;
+    $scope.checked = [1,2,3,4];
+    $scope.current = 4;
+    $scope.showed = 4;
+    $scope.last = $scope.intervals.length;
    
+    console.log("last: " + $scope.last);
+    console.log("last elem: " + $scope.intervals.length);
+
     var athlete = angular.element(document.getElementById("athlete-id"));
    
     var trackWidth = angular.element(document.getElementById("ski-track"))[0].clientWidth;

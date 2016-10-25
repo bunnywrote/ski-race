@@ -15,13 +15,15 @@
             <div class="ski-container">
                 <div id="athlete-id" class="athlete-icon"></div>
                 <div id="ski-track">
-                    <div ng-repeat="interval in intervals" class="track-part">
-                        <div ng-click="showInfo($index+1)" class="check-point">
+                    <div ng-click="showInfo($index+1)" ng-repeat="interval in intervals" class="track-part">
+                        <div class="check-point">
                             <span>{{$index+1}}</span>
                         </div>
-                        <div ng-class="{current: $index+1 == showed}" class="info-block">
+                        <div ng-class="{'current': $index+1 == showed, 'info-block-right': $index+1 == last, 'info-block-left': $index+1 != last}">
                             <span>{{$index+1}}</span>
                         </div>
+                    </div>
+                    <div class="finish">
                     </div>
                 </div>
             </div>
